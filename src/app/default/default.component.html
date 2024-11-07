@@ -1,0 +1,91 @@
+<app-navbar></app-navbar>
+<div class="container mx-auto px-72  ">
+    <div class="bg-white p-8 ">
+      <div class="mb-4">
+        <h2 class="text-lg font-bold mb-4">Meridian Restaurant</h2>
+      
+        <div class="flex space-x-4">
+          <button class="bg-orange-500 text-white px-4 py-2 rounded-md">Order Online</button>
+          <button class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md">Dineout</button>
+        </div>
+      </div>
+     <div class=" p-5 rounded-3xl border shadow-xl border-gray-400">
+      <div class="flex items-center  ">
+        <div class=" p-2 rounded-md mr-4">
+          <span class="text-sm font-semibold">4.4 (243K+ ratings)</span>
+        </div>
+        <span class="text-sm text-gray-700">₹400 for two</span>
+      </div>
+  
+      <div class="mb-4">
+        <p class="text-sm underline font-bold text-orange-500">Biryani, Chinese</p>
+      </div>
+  
+      <div class="mb-4">
+        <div class="flex gap-2 mb-2">
+        <h3 class="text-sm font-semibold">Outlet</h3>
+        <p class="text-sm text-gray-500">Panjagutta</p>
+    </div>
+        <p class="text-xs text-gray-500">30-35 mins</p>
+      </div>
+     </div>
+  
+      <div class="mb-4 mt-4">
+        <h2 class="text-lg font-bold">Deals for You</h2>
+
+        <div class="flex space-x-4 gap-4 justify-evenly">
+          <div class=" p-2 rounded-xl border border-gray-300 items-center">
+            <p class="text-sm font-semibold text-gray-700 ml-2">Extra ₹25 Off</p>
+            <p class="text-xs text-gray-500 ml-2">APPLICABLE OVER & ABOVE COUPONS</p>
+          </div>
+          <div class=" p-2 rounded-xl border border-gray-300 items-center pr-44">
+            <p class="text-sm font-semibold text-gray-700 ml-2">Flat ₹75 Off</p>
+            <p class="text-xs text-gray-500 ml-2">USE RBLCC75</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Recomonded -->
+
+
+<div class="container mx-auto px-72">
+    <h2 class="text-lg font-semibold">Recommended ({{ items.length }})</h2>
+    <div class="bg-white p-4 rounded-md  ">
+      <div *ngFor="let item of items" class="flex justify-between items-center border-b border-gray-500 py-4">
+        <div>
+          <div class="flex items-center mb-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-red-500">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75M9 20.25V9m3 11.25V9m3 11.25V9m-9 11.25v-11.25m9 11.25v-11.25M9 9m3 3H9m3 0h3M9 9h3m-3 3h3" />
+            </svg>
+            <p class="text-sm font-semibold text-orange-500">Bestseller</p>
+          </div>
+          <h3 class="text-sm font-semibold">{{ item.name }}</h3>
+          <p class="text-sm text-gray-500">₹{{ item.price }}</p>
+          <p class="text-xs text-gray-500">★4.3 (61495)</p>
+          <p class="text-xs text-gray-500">Serves 1 Person</p>
+
+        </div>
+         
+
+    <!-- favorites -->
+
+    <div>
+        <div class="relative">
+          <img [src]="item.imageUrl" alt="{{ item.name }}" class="w-32 h-32 object-cover rounded-md">
+          <button (click)="addItemToCart(item)" class="absolute bottom-2 left-1/2 transform -translate-x-1/2 bg-white text-green-500 px-4 py-1 rounded-md">ADD</button>
+        </div>
+          <button *ngIf="!favoritesService.isFavorite(item)" (click)="addItemToFavorites(item)" class="mt-2 bg-yellow-500 text-white px-4 py-1 rounded-md ml-2">
+            Add to Favorites
+          </button>
+          <button *ngIf="favoritesService.isFavorite(item)" class="mt-2 bg-yellow-300 text-white px-4 py-1 rounded-md ml-2">
+            Added to Favorites
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

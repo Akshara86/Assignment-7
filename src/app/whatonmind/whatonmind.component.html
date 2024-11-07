@@ -1,0 +1,39 @@
+<div class="container px-6 py-4">
+    <div class="flex items-center justify-between mx-32">
+        <h2 class="text-lg font-semibold">What's on your mind?</h2>
+        <div class="flex items-center space-x-4">
+            <!-- Left Arrow -->
+            <button (click)="scrollLeft()" class="text-gray-500 hover:text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <!-- Right Arrow -->
+            <button (click)="scrollRight()" class="text-gray-500 hover:text-gray-800">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Image Carousel -->
+    <div class="overflow-hidden mx-32"> <!-- Added horizontal margin -->
+        <div id="carousel" class="flex space-x-4 transition-transform duration-300">
+            <img class="w-52 h-52"  src="assets/Biryani.avif" alt="Biryani"  (click)="goToDefault()">
+            <img class="w-52 h-52" src="assets/southindia.avif" alt="South Indian " (click)="goToDefault()">
+            <img class="w-52 h-52" src="assets/burger.avif" alt="Burger" (click)="goToDefault()">
+            <img class="w-52 h-52" src="assets/cake.avif" alt="Cake" (click)="goToDefault()">
+            <img class="w-52 h-52" src="assets/Chinese.avif" alt="Chinese" (click)="goToDefault()">
+            <img class="w-52 h-52" src="assets/Dosa.avif" alt="Dosa"(click)="goToDefault()">
+            <img class="w-52 h-52" src="assets/icecream.avif" alt="Ice Cream" (click)="goToDefault()">
+            <img class="w-52 h-52" src="assets/Kebabs.avif" alt="Kebabs" (click)="goToDefault()">
+            <img class="w-52 h-52" src="assets/NorthIndian.avif" alt="North Indian" (click)="goToDefault()">
+            <img class="w-52 h-52" src="assets/Paratha.avif" alt="Paratha" (click)="goToDefault()">
+            <img class="w-52 h-52" src="assets/Pizzas.avif" alt="Pizzas" (click)="goToDefault()">
+            <img class="w-52 h-52" src="assets/Pure_Veg.avif" alt="Pure Veg" (click)="goToDefault()">
+            <img class="w-52 h-52" src="assets/Rasmalai.avif" alt="Rasmalai" (click)="goToDefault()">
+            
+        </div>
+    </div>
+</div>

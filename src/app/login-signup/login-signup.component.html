@@ -1,0 +1,39 @@
+<body class=" items-center justify-center min-h-screen bg-gradient-to-br">
+    <div class="text-center mb-4">
+        <h2 class="text-2xl font-bold text-orange-700 pt-16">Login or Register into Swiggy</h2>
+    </div>
+    <div class="bg-white bg-opacity-80 max-w-sm mx-auto p-8 rounded-lg shadow-lg m-20">
+        <!-- REGISTER FORM -->
+        <form *ngIf="activeForm === 'register'">
+            <h2 class="text-2xl font-bold text-orange-700 text-center mb-6">REGISTER</h2>
+            <div class="mb-4">
+                <input type="text" name="name" [(ngModel)]="registerObj.name" placeholder="Name" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500">
+            </div>
+            <div class="mb-4">
+                <input type="email" name="email" [(ngModel)]="registerObj.email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500">
+            </div>
+            <div class="mb-6">
+                <input type="password" name="password" [(ngModel)]="registerObj.password" placeholder="Password" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500">
+            </div>
+            <button type="submit" (click)="registerForm()" class="w-full py-3 bg-orange-500 text-white font-bold rounded hover:bg-orange-600 transition-colors duration-300">Register</button>
+            <p class="text-center mt-4 text-sm text-gray-700">
+                Already have an account? <span class="text-orange-500 font-bold cursor-pointer" (click)="toggleForm('login')">LOGIN</span>
+            </p>
+        </form>
+
+        <!-- LOGIN FORM -->
+        <form *ngIf="activeForm === 'login'">
+            <h2 class="text-2xl font-bold text-orange-700 text-center mb-6">LOGIN</h2>
+            <div class="mb-4">
+                <input type="email" name="email" [(ngModel)]="loginObj.email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500">
+            </div>
+            <div class="mb-6">
+                <input type="password" name="password" [(ngModel)]="loginObj.password" placeholder="Password" class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-orange-500">
+            </div>
+            <button type="submit" (click)="loginForm()" class="w-full py-3 bg-orange-500 text-white font-bold rounded hover:bg-orange-600 transition-colors duration-300">Login</button>
+            <p class="text-center mt-4 text-sm text-gray-700">
+                Don't have an account? <span class="text-orange-500 font-bold cursor-pointer" (click)="toggleForm('register')">REGISTER</span>
+            </p>
+        </form>
+    </div>
+</body>
